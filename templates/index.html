@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentilys</title>
+    <!-- Use Flask's url_for function to link the CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Sentilys Logo" />
+        <span>entilys</span>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#how-to">How to use?</a>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="logo-form">
+        <!-- Logo Section -->
+        <div>
+          <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" />
+        </div>
+
+        <!-- Form Section -->
+        <div>
+          <h1>Unleash the Power of Opinions: Analyze Sentiments and Transform Data into Insights with Sentilys!</h1>
+
+          <div class="form-container">
+            <form action="/scrape" method="post">
+              <label for="app-id" style="color: #00ff00">Application ID:</label>
+              <input type="text" id="app-id" name="app_id" placeholder="(example: gov.dukcapil.mobile_id)" required />
+
+              <label for="comments-number" style="color: #00ff00">Set the number of comments for analysis:</label>
+              <input type="number" id="comments-number" name="limit" placeholder="Number of comments" required />
+
+              <label for="score" style="color: #00ff00">Filter by Score (Optional):</label>
+              <select id="score" name="filter_score">
+                <option value="None">All Scores</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2 style="text-align: center">About Us</h2>
+    <section id="about" class="about-section">
+      <p>
+        <span style="color: #00ff00">Sentilys</span> adalah aplikasi analisis sentimen berbasis web yang dirancang untuk membantu peneliti dan pengembang dalam memahami pola sentimen dalam teks. Menggunakan algoritma canggih dan model yang
+        telah dilatih secara optimal, <span style="color: #00ff00">Sentilys</span> mampu mencapai tingkat akurasi sebesar 87%, dengan pengembangan berkelanjutan untuk mencapai hasil yang lebih baik di masa mendatang.
+      </p>
+      <p>
+        Dengan Machine Learning dan Natural Language Processing sebagai intinya, <span style="color: #00ff00">Sentilys</span> secara efisien mengkategorikan sentimen menjadi <span style="color: red">positif</span> dan
+        <span style="color: red">negatif</span> sesuai konteks. Ini menjadikan <span style="color: #00ff00">Sentilys</span> sebagai alat yang cocok bagi pengguna yang ingin mengeksplorasi data sentimen secara lebih mendalam.
+      </p>
+      <p>Kami terus berupaya untuk meningkatkan performa model melalui pengembangan berkelanjutan. Dengan <span style="color: #00ff00">Sentilys</span>, temukan wawasan dari data teksmu dan buka pintu menuju analisis sentimen yang andal.</p>
+    </section>
+    <section id="how-to" class="how-to">
+      <h2 style="text-align: center">How to use?</h2>
+      <ol class="list-how-to">
+        <li>
+          Masukkan <span style="color: #00ff00">ID Aplikasi</span> dari aplikasi yang ingin Anda ambil datanya ke kolom input yang tersedia. ID ini biasanya bisa ditemukan di <span style="color: orange">URL</span> halaman aplikasi di
+          <span>Google Play Store</span>.
+        </li>
+        <li>
+          Tentukan <span style="color: #00ff00">jumlah komentar</span> yang ingin diambil dengan memasukkan angka di kolom batasan jumlah. Aplikasi akan <span style="color: orange">mengumpulkan</span> komentar sesuai dengan jumlah yang anda
+          tetapkan.
+        </li>
+        <li>
+          Tentukan <span style="color: #00ff00">score</span> dari komentar yang akan diambil, contohnya bintang <span style="color: orange">1, 2, 3, 4, 5</span> atau mencakup <span style="color: orange">semua</span>.
+        </li>
+        <li>
+          Setelah <span style="color: #00ff00">proses</span> <span style="color: orange">pengambilan data</span> selesai, Anda akan <span style="color: #00ff00">diarahkan</span> ke <span style="color: orange">halaman baru</span> yang
+          menampilkan <span style="color: #00ff00">hasil:</span>
+        </li>
+        <ul style="list-style: disc">
+          <li>Anda bisa <span style="color: orange">mengunduh</span> <span style="color: #00ff00">data</span> yang diambil dengan menekan tombol <span style="color: #00ff00">"Download Hasil Scraping"</span>.</li>
+          <li>
+            Setelah <span style="color: #00ff00">klasifikasi</span> <span style="color: orange">selesai,</span> hasil klasifikasi dapat <span style="color: #00ff00">diunduh</span> melalui tombol
+            <span style="color: orange">"Download Hasil Klasifikasi"</span>.
+          </li>
+        </ul>
+        <li>
+          Tinjau <span style="color: #00ff00">hasil</span> yang <span style="color: orange">diperoleh</span> untuk mendapatkan wawasan dari umpan balik pengguna dan gunakan informasi ini untuk
+          <span style="color: orange">penelitian</span> atau <span style="color: orange">analisis</span> Anda.
+        </li>
+      </ol>
+    </section>
+    <footer>&copy; Naufal Abrari 2024</footer>
+  </body>
+</html>

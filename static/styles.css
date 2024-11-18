@@ -1,0 +1,253 @@
+body {
+    background-color: black;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px dashed #00ff00;
+  }
+  
+  .logo img {
+    width: 50px;
+    vertical-align: middle;
+  }
+  
+  .logo span {
+    font-size: 24px;
+    margin-left: -10px;
+    color: #00ff00;
+  }
+  
+  nav a {
+    color: #00ff00;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 18px;
+  }
+  
+  .container {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 850px;
+    padding: 20px;
+    width: 90%; /* Menyesuaikan lebar pada layar kecil */
+  }
+  
+  h1 {
+    color: #00ff00;
+    margin-bottom: 10px;
+    font-size: 11px;
+    text-align: left;
+    line-height: 18px;
+  }
+  
+  .logo-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .logo-form img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+  .form-container {
+    border: 2px solid #00ff00;
+    padding: 30px;
+    border-radius: 8px;
+    background-color: black;
+    /* box-shadow: 0 0 10px #00ff00; */
+  }
+  
+  .form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+  
+  .hasil-section {
+    margin: 50px auto;
+    padding: 150px 0px;
+    border: 2px solid #00ff00;
+    max-width: 800px;
+    text-align: left;
+    max-height: 500px;
+    scrollbar-width: auto;
+  }
+  
+  .positive-negative {
+    margin: 0px auto;
+    padding: 50px 0px;
+    max-width: 800px;
+    text-align: left;
+    scrollbar-width: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 0px 50px;
+  }
+  
+  .button-download {
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+  }
+  
+  table,
+  th,
+  td {
+    border: 1px solid #00ff00;
+    border-collapse: collapse;
+  }
+  
+  .sentiment-retribution {
+    margin: 0px auto;
+    padding: 0 20px;
+    max-width: 850px;
+    text-align: left;
+  }
+  
+  .sentiment-retribution-content {
+    margin: 50px 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .form-container input,
+  .form-container select {
+    width: 100%;
+    padding: 10px 0px;
+    background-color: black;
+    border: 1px solid #00ff00;
+    border-radius: 4px;
+    color: #00ff00;
+    font-size: 16px;
+  }
+  
+  .form-container label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    text-align: left;
+  }
+  
+  .form-container button {
+    background-color: transparent;
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .form-container button:hover {
+    background-color: #00cc00;
+    color: white;
+  }
+  
+  .form-container button:hover {
+    background-color: #00cc00;
+    color: white;
+  }
+  
+  @media (max-width: 768px) {
+    .logo-form {
+      flex-direction: column;
+    }
+  
+    .logo-form > div {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .form-container {
+      width: 100%;
+    }
+  
+    nav a {
+      margin-left: 10px;
+    }
+  
+    .container {
+      max-width: 95%; /* Menggunakan hampir seluruh layar untuk perangkat kecil */
+      margin: 20px auto; /* Kurangi margin pada layar kecil */
+    }
+  
+    .positive-negative {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .image-1 {
+      width: 380px;
+    }
+  
+    .sentiment-retribution-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  
+  .about-section {
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #00ff00;
+    max-width: 800px;
+    text-align: left;
+  }
+  
+  .how-to {
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 850px;
+    text-align: left;
+  }
+  
+  h2 {
+    color: #00ff00;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  
+  footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #00ff00;
+    border-top: 1px solid #00ff00;
+  }
+  
+  .list-how-to {
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hover-effect {
+    padding: 7px 20px;
+    border-radius: 15px;
+    color: #00ff00;
+    background-color: transparent;
+    border: 1px solid #00ff00;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .hover-effect:hover {
+    background-color: #00ff00;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    transform: scale(1.05);
+  }
+  

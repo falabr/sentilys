@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="width=device-width, initial-scale=1.0" />
+    <title>Sentilys Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <style>
+      /* Add some padding and margin for the table container */
+      .table-container {
+        max-height: 400px;
+        overflow-y: auto;
+        border: 1px solid #ccc;
+        margin: 20px;
+        padding: 10px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th, td {
+        padding: 10px;
+        text-align: left;
+      }
+      th {
+        background-color: #444;
+        color: #fff;
+      }
+      td {
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Sentilys Logo" />
+        <span>entilys</span>
+      </div>
+      <nav>
+        <a href="/">Home</a>
+      </nav>
+    </header>
+    <h2 style="text-align: center">Results</h2>
+    <section id="results-section">
+      <!-- Wrap table in a div for scrollable behavior -->
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>User Name</th>
+            <th>Content</th>
+            <th>Score</th>
+            <th>Stemmed Content</th>
+            <th>Label</th>
+          </tr>
+          {% for row in table_data %}
+          <tr>
+            <td>{{ row['userName'] }}</td>
+            <td>{{ row['content'] }}</td>
+            <td>{{ row['score'] }}</td>
+            <td>{{ row['stemmed_content'] }}</td>
+            <td>{{ row['label'] }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </section>
+    <section id="visualizations">
+      <h2 style="text-align: center">Sentiment Distribution</h2>
+      <!-- Resize pie chart to be smaller -->
+      <img src="data:image/png;base64,{{ pie_chart }}" alt="Pie Chart" style="display: block; margin: auto; width: 300px; height: auto;" />
+      <div class="positive-negative">
+        <div>
+          <p style="color: #00ff00; text-align: center; font-size: 14px">Positive Sentiment Word Cloud</p>
+          {% if wordcloud_positive %}
+          <img src="data:image/png;base64,{{ wordcloud_positive }}" alt="Positive Word Cloud" style="width: 380px; display: block; margin: auto;" />
+          {% else %}
+          <p style="text-align: center">No data for positive word cloud</p>
+          {% endif %}
+        </div>
+        <div>
+          <p style="color: #00ff00; text-align: center; font-size: 14px">Negative Sentiment Word Cloud</p>
+          {% if wordcloud_negative %}
+          <img src="data:image/png;base64,{{ wordcloud_negative }}" alt="Negative Word Cloud" style="width: 380px; display: block; margin: auto;" />
+          {% else %}
+          <p style="text-align: center">No data for negative word cloud</p>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+    <section class="button-download">
+      <div style="display: flex; justify-content: center; align-items: center; flex-direction: column; gap: 40px 0px">
+        <a href="/download/{{ file }}" class="hover-effect">Download Scraping Result (CSV)</a>
+        <a href="/download_excel/{{ file_xlsx }}" class="hover-effect">Download Scraping Result (Excel)</a>
+      </div>
+    </section>
+    <footer>&copy; Naufal Abrari 2024</footer>
+  </body>
+</html>
