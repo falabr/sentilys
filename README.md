@@ -16,7 +16,7 @@ Prerequisites
 
 Steps
 1. Clone the repository:
-- git clone https://github.com/yourusername/sentilys.git
+- git clone https://github.com/falabr/sentilys.git
 - cd sentilys
 2. (Optional) Create and activate a virtual environment:
 - python -m venv venv
